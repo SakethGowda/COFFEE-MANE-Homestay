@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Coffee Mane | ಕಾಫಿ ಮನೆ</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+
+<section class="gallery">
+  <h2>COFFEE MANE HOMESTAY</h2>
+  <div class="gallery-images">
+    <img src="images/homestay/hero.jpg" alt="Homestay">
+  </div>
+  
+  <h2>NATURE & SURROUNDINGS 🌿🌄</h2>
+  <div class="gallery-images">
+    <img src="images/nature/nature1.jpg" alt="Nature">
+    <img src="images/nature/nature2.jpg" alt="Nature">
+  </div>
+
+  <h2>ROOMS</h2>
+  <div class="gallery-images">
+    <img src="images/rooms/room1.jpg" alt="Room">
+    <img src="images/rooms/room2.jpg" alt="Room">
+  </div>
+
+  <h2>WASHROOM</h2>
+  <div class="gallery-images">
+    <img src="images/washroom/washroom1.jpg" alt="Washroom">
+    <img src="images/washroom/washroom2.jpg" alt="Washroom">
+  </div>
+</section>
+
+<a href="https://forms.gle/D3f3KuaThHVzMiA97" target="_blank" class="floating-booking-btn">Book Now</a>
+
+<div id="footer"></div>
+
+<script>
+  // Load header & footer
+  fetch("partials/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+
+      // Initialize mobile menu
+      const menuToggle = document.querySelector(".nav-toggle");
+      const mobileNav = document.querySelector(".mobile-nav");
+
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener("click", () => {
+          mobileNav.classList.toggle("active");
+        });
+
+        // Close menu when clicking a link
+        mobileNav.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", () => {
+            mobileNav.classList.remove("active");
+          });
+        });
+      }
+    });
+
+  fetch("partials/footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1047 @@
+/* ==================================================
+HOME PAGE – HEADER
+================================================== */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: #fae279;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 42px;
+}
+
+.site-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #3e2c1c;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-btn {
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.nav-toggle {
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* DESKTOP MENU */
+@media (min-width: 1024px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .mobile-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+  }
+
+  .mobile-nav ul li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #3e2c1c;
+  }
+}
+
+/* MOBILE MENU */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+    z-index: 1200;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    top: 80px;
+    right: 16px;
+    transform: translateX(120%);
+    transition: transform 0.35s ease;
+    z-index: 1199;
+  }
+
+  .mobile-nav.active {
+    transform: translateX(0);
+  }
+
+  .mobile-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-nav ul li a {
+    display: inline-flex;
+    padding: 14px 22px;
+    background: #fae279;
+    color: #3e2c1c;
+    font-weight: 600;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  }
+}
+
+/* ==================================================
+HOME PAGE – HERO SECTION
+================================================== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  max-width: 1200px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  color: #ffffff;
+  background: rgba(0,0,0,0.15);
+}
+
+.hero-text h1 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+/* HERO BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-buttons a {
+  padding: 12px 26px;
+  border-radius: 30px;
+  background: #6b4f2c;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.hero-buttons a:hover {
+  background: #543a1f;
+  transform: scale(1.05);
+}
+
+/* MOBILE HERO */
+@media (max-width: 768px) {
+  .hero {
+    height: 65vh;
+  }
+
+  .hero-text h1 {
+    font-size: 1.7rem;
+  }
+}
+
+/* ==================================================
+HOME PAGE – FOOTER
+================================================== */
+footer {
+  background: #fae279;
+  padding: 25px 16px;
+  text-align: center;
+}
+
+footer p {
+  margin: 8px 0;
+}
+
+footer a {
+  color: #6b4f2c;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: #543a1f;
+}
+
+/* ==================================================
+HOME PAGE – FLOATING BOOK BUTTON
+================================================== */
+.floating-booking-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #6b4f2c, #543a1f);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+
+
+
+/* ==================================================
+ABOUT PAGE – MAIN CONTAINER
+================================================== */
+.about {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/* ==================================================
+ABOUT PAGE – IMAGE
+================================================== */
+.about img {
+  width: 100%;
+  max-width: 650px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* IMAGE HOVER (DESKTOP ONLY) */
+@media (hover: hover) {
+  .about img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.25);
+  }
+}
+
+/* ==================================================
+ABOUT PAGE – TEXT BLOCK
+================================================== */
+.about-text {
+  background: rgba(255,255,255,0.9);
+  padding: 28px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 800px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #3e2c1c;
+  position: relative;
+}
+
+/* HEADING UNDERLINE */
+.about-text h2::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: #6b4f2c;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 4px;
+}
+
+.about-text p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* ==================================================
+ABOUT PAGE – MOBILE ADJUSTMENTS
+================================================== */
+@media (max-width: 768px) {
+  .about-text {
+    padding: 20px;
+  }
+
+  .about-text h2 {
+    font-size: 1.7rem;
+  }
+}
+
+
+
+/* ==================================================
+GALLERY PAGE – MAIN CONTAINER
+================================================== */
+.gallery {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* ==================================================
+GALLERY PAGE – SECTION HEADINGS
+================================================== */
+.gallery h2 {
+  font-size: 2rem;
+  color: #3e2c1c;
+  text-align: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.gallery h2::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: #6b4f2c;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 4px;
+}
+
+/* ==================================================
+GALLERY PAGE – IMAGE GRID
+================================================== */
+.gallery-images {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  justify-items: center;
+}
+
+/* ==================================================
+GALLERY PAGE – IMAGES (DESKTOP)
+================================================== */
+.gallery-images img {
+  width: 100%;
+  max-width: 400px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* IMAGE HOVER – DESKTOP ONLY */
+@media (hover: hover) {
+  .gallery-images img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+  }
+}
+
+/* ==================================================
+GALLERY PAGE – MOBILE FIX (SQUARE IMAGES)
+================================================== */
+@media (max-width: 768px) {
+  .gallery h2 {
+    font-size: 1.7rem;
+  }
+
+  .gallery-images img {
+    width: 100%;
+    max-width: 95%;
+    aspect-ratio: 1 / 1;   /* height = width */
+    height: auto;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+}
+
+
+
+
+/* ==================================================
+NEARBY PLACES – FULL PAGE CSS
+================================================== */
+
+.places {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  overflow-x: hidden;
+}
+
+/* PAGE TITLE */
+.places h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  color: #3e2c1c;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.places h2::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: #6b4f2c;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 4px;
+}
+
+/* PLACE CARD */
+.place-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  padding: 16px;
+  width: 260px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* IMAGE */
+.place-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+/* TITLE */
+.place-card h3 {
+  font-size: 1.1rem;
+  color: #3e2c1c;
+  margin-bottom: 12px;
+}
+
+/* BUTTON */
+.place-card a {
+  display: inline-block;
+  padding: 10px 22px;
+  background: linear-gradient(135deg, #6b4f2c, #543a1f);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 30px;
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .place-card {
+    width: 45%;
+  }
+}
+
+/* MOBILE – PERFECT CENTER, NO SLIDE */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .places {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 12px;
+  }
+
+  .place-card {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 14px;
+  }
+
+  .place-card img {
+    height: auto;
+  }
+}
+
+
+
+/* ==================================================
+ACTIVITIES PAGE – FULL & FINAL CSS
+================================================== */
+
+.activities {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 16px;
+  text-align: center;
+}
+
+/* PAGE TITLE */
+.activities h2 {
+  font-size: 2rem;
+  color: #3e2c1c;
+  margin-bottom: 10px;
+}
+
+.activity-note {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* ACTIVITY GROUP */
+.activity-group {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.activity-group h3 {
+  font-size: 1.6rem;
+  color: #3e2c1c;
+}
+
+/* BIG IMAGE */
+.activity-img.big-img {
+  width: 80%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+}
+
+/* IMAGE ROW */
+.activity-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.activity-row img {
+  width: 40%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+}
+
+/* LAST ACTIVITIES */
+.last-activities {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.last-activities h3 {
+  font-size: 1.6rem;
+  color: #3e2c1c;
+}
+
+.last-activities .single-activity img {
+  width: 85%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 18px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.25);
+}
+
+/* MOBILE – PERFECT STACK & CENTER */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .activities h2 {
+    font-size: 1.7rem;
+  }
+
+  .activity-img.big-img {
+    width: 95%;
+  }
+
+  .activity-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .activity-row img {
+    width: 95%;
+  }
+
+  .last-activities .single-activity img {
+    width: 95%;
+  }
+}
+
+
+
+/* ==================================================
+WILDLIFE PAGE – FULL & FINAL CSS
+================================================== */
+
+.wildlife {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 16px;
+  text-align: center;
+}
+
+/* TITLE */
+.wildlife h1 {
+  font-size: 2rem;
+  color: #3a5a40;
+  margin-bottom: 10px;
+}
+
+.wildlife-sub {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* GRID */
+.wildlife-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.wildlife-card {
+  background: #f8f9f6;
+  padding: 16px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* CARD TITLE */
+.wildlife-card h3 {
+  font-size: 1.05rem;
+  color: #344e41;
+  margin-bottom: 12px;
+}
+
+/* IMAGE */
+.wildlife-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .wildlife-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE – PERFECT FIT */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .wildlife-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wildlife-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+
+
+
+
+/* ==================================================
+TARIFF PAGE – FULL & FINAL CSS
+================================================== */
+
+/* HERO */
+.tariff-hero {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 20px auto 0;
+  height: 380px;
+  background-image: url("../images/traiff.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 22px;
+}
+
+/* HERO TITLE */
+.tariff-hero h1 {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+/* ==================================================
+TARIFF CARD SECTION
+================================================== */
+.tariff-section {
+  padding: 40px 16px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.tariff-card {
+  max-width: 500px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+/* CARD TITLES */
+.tariff-card h2 {
+  font-size: 2rem;
+  color: #3e2c1c;
+  margin-bottom: 20px;
+}
+
+.tariff-card h2 span {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #666;
+}
+
+.tariff-card h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #6b4f2c;
+}
+
+/* LIST */
+.tariff-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tariff-card ul li {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+/* ==================================================
+FOOD SECTION
+================================================== */
+.food-section {
+  padding: 20px 16px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.food-content {
+  max-width: 500px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.food-section h2 {
+  font-size: 2rem;
+  color: #3e2c1c;
+  margin-bottom: 20px;
+}
+
+.food-content img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+.food-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* ==================================================
+MOBILE
+================================================== */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .tariff-hero {
+    height: 240px;
+  }
+
+  .tariff-hero h1 {
+    top: 20px;
+    font-size: 2rem;
+  }
+
+  .tariff-section {
+    padding-top: 25px;
+  }
+
+  .food-section {
+    padding-top: 15px;
+  }
+}
+
+
+
+/* ==================================================
+BOOKING PAGE – FULL & FINAL CSS
+================================================== */
+
+.booking-section {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 16px;
+  text-align: center;
+}
+
+/* TITLE */
+.booking-section h2 {
+  font-size: 2rem;
+  color: #3e2c1c;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.booking-section h2::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: #6b4f2c;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 4px;
+}
+
+/* DESCRIPTION */
+.booking-section p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* GOOGLE FORM */
+.booking-section iframe {
+  width: 100%;
+  max-width: 100%;
+  height: 750px;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+  display: block;
+  margin: 0 auto;
+}
+
+/* CTA BUTTONS */
+.booking-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #6b4f2c, #543a1f);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: scale(1.06);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .booking-section h2 {
+    font-size: 1.7rem;
+  }
+
+  .booking-section iframe {
+    height: 600px;
+    border-radius: 12px;
+  }
+
+  .cta-btn {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+
+
+/* ==================================================
+CONTACT PAGE – FULL & FINAL CSS
+================================================== */
+
+.contact {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 16px;
+  text-align: center;
+}
+
+/* TITLE */
+.contact h2 {
+  font-size: 2rem;
+  color: #3e2c1c;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.contact h2::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: #6b4f2c;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 4px;
+}
+
+/* LIST */
+.contact ol {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+/* LIST ITEM */
+.contact ol li {
+  margin-bottom: 16px;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* IMAGE */
+.contact ol li img {
+  width: 100%;
+  max-width: 420px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+/* LINKS */
+.contact a {
+  color: #6b4f2c;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .contact h2 {
+    font-size: 1.7rem;
+  }
+
+  .contact ol li img {
+    height: 220px;
+  }
+}
+
+
+
+
+

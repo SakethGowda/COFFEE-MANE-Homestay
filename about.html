@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Coffee Mane | ಕಾಫಿ ಮನೆ</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+
+<section class="about">
+  <img src="images/homestay/about.jpg" alt="About Coffee Mane Homestay">
+  <div class="about-text">
+    <h2>About Coffee Mane | ಕಾಫಿ ಮನೆ</h2>
+    <p>Peaceful homestay in Mekanagadde, surrounded by nature and hills.</p>
+    <p class="about-summary">
+  ☕🌿 Coffee Mane (ಕಾಫಿ ಮನೆ) is a peaceful homestay located within a beautiful coffee estate in
+  Mekanagadde, Mudigere, surrounded by lush greenery and fresh mountain air.
+</p>
+
+<p class="about-summary">
+  🌄 Wake up to misty mornings and stunning sunrises, enjoy calm walks through the coffee plantation 🚶‍♂️,
+  and explore nearby trekking spots 🥾, waterfalls 🌊, and temples 🕉️ — making Coffee Mane an ideal
+  getaway for families, couples, and nature lovers.
+</p>
+  </div>
+</section>
+
+<a href="https://forms.gle/D3f3KuaThHVzMiA97" target="_blank" class="floating-booking-btn">Book Now</a>
+
+<div id="footer"></div>
+
+<script>
+  // Load header & footer
+  fetch("partials/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+
+      // Initialize mobile menu
+      const menuToggle = document.querySelector(".nav-toggle");
+      const mobileNav = document.querySelector(".mobile-nav");
+
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener("click", () => {
+          mobileNav.classList.toggle("active");
+        });
+
+        // Close menu when clicking a link
+        mobileNav.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", () => {
+            mobileNav.classList.remove("active");
+          });
+        });
+      }
+    });
+
+  fetch("partials/footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>

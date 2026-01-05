@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking | Coffee Mane | ಕಾಫಿ ಮನೆ</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ===================== HEADER ===================== -->
+    <div id="header"></div>
+
+    <!-- ===================== BOOKING SECTION ===================== -->
+    <section class="booking-section">
+      <h2>Booking</h2>
+      <p>
+        Fill out the form below to book your stay. We will contact you via
+        WhatsApp or Call.
+      </p>
+
+      <!-- Google Form Embed -->
+      <iframe
+        src="https://forms.gle/D3f3KuaThHVzMiA97"
+        width="100%"
+        height="700"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+      >
+        Loading…
+      </iframe>
+
+      <!-- Loading Spinner -->
+      <div
+        id="loading-spinner"
+        style="
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.8);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 9999;
+        "
+      >
+        <div
+          style="
+            width: 50px;
+            height: 50px;
+            border: 5px solid #ccc;
+            border-top: 5px solid #333;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+          "
+        ></div>
+      </div>
+
+      <style>
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      </style>
+
+      <!-- CTA Buttons -->
+      <div class="booking-buttons">
+        <a href="tel:+916362179597" class="cta-btn">Call Now</a>
+        <a
+          href="https://wa.me/918762504467?text=Hi"
+          target="_blank"
+          class="cta-btn"
+          >WhatsApp</a
+        >
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <div id="footer"></div>
+
+    <script>
+      // Load header & footer
+      fetch("partials/header.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+
+          // Initialize mobile menu
+          const menuToggle = document.querySelector(".nav-toggle");
+          const mobileNav = document.querySelector(".mobile-nav");
+
+          if (menuToggle && mobileNav) {
+            menuToggle.addEventListener("click", () => {
+              mobileNav.classList.toggle("active");
+            });
+
+            // Close menu when clicking a link
+            mobileNav.querySelectorAll("a").forEach((link) => {
+              link.addEventListener("click", () => {
+                mobileNav.classList.remove("active");
+              });
+            });
+          }
+        });
+
+      fetch("partials/footer.html")
+        .then((res) => res.text())
+        .then((data) => (document.getElementById("footer").innerHTML = data));
+
+      // Show loading spinner until iframe loads
+      const iframe = document.querySelector("iframe");
+      const spinner = document.getElementById("loading-spinner");
+
+      iframe.addEventListener("load", () => {
+        spinner.style.display = "none";
+      });
+    </script>
+    <!-- ===================== JS ===================== -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tariff | Coffee Mane | ಕಾಫಿ ಮನೆ</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="header"></div>
+
+<!-- HERO -->
+<section class="tariff-hero">
+  <h1>Tariff 💰</h1>
+</section>
+
+<!-- TARIFF -->
+<section class="tariff-section">
+  <div class="tariff-card">
+    <h2>₹1500 <span>/ person / night</span></h2>
+
+    <h3>Includes</h3>
+    <ul>
+      <li>🍽️ Dinner</li>
+      <li>🥣 Breakfast / Tiffin</li>
+      <li>☕ Fresh Coffee</li>
+    </ul>
+
+    <h3>Child Policy</h3>
+    <ul>
+      <li>👶 Below 5 years – <strong>Free</strong></li>
+      <li>🧒 6 to 10 years – <strong>50% Off</strong></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOD (MATCHES TARIFF CARD LAYOUT) -->
+<section class="food-section">
+  <div class="food-content">
+
+    <h2>🍽️ Home-Cooked Food</h2>
+
+    <p>
+      Fresh, hygienic, and delicious home-style meals prepared with love.
+    </p>
+
+    <img src="images/koli.png" alt="Homemade Chicken Curry">
+
+    <p>
+      🟢 Vegetarian & 🔴 Non-Vegetarian food available<br>
+      🍛 Traditional Malnad-style home-cooked meals<br>
+      ☕ Coffee made from our own estate beans
+    </p>
+
+  </div>
+</section>
+
+<a href="https://forms.gle/D3f3KuaThHVzMiA97" target="_blank" class="floating-booking-btn">
+  Book Now
+</a>
+
+<div id="footer"></div>
+
+<script>
+  // Load header & footer
+  fetch("partials/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+
+      // Initialize mobile menu
+      const menuToggle = document.querySelector(".nav-toggle");
+      const mobileNav = document.querySelector(".mobile-nav");
+
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener("click", () => {
+          mobileNav.classList.toggle("active");
+        });
+
+        // Close menu when clicking a link
+        mobileNav.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", () => {
+            mobileNav.classList.remove("active");
+          });
+        });
+      }
+    });
+
+  fetch("partials/footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>

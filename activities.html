@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activities | Coffee Mane | ಕಾಫಿ ಮನೆ</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+
+<section class="activities">
+  <h2>Activities 🌿</h2>
+  <p class="activity-note">
+  Enjoy peaceful moments at Coffee Mane with nature walks 🌿, coffee estate experiences ☕, trekking views 🥾,
+  and calm surroundings that refresh your mind and soul 🌄.
+</p>
+
+
+  <!-- Coffee Estate Walk -->
+  <div class="activity-group">
+    <h3>Coffee Estate Walk ☕🌿</h3>
+
+    <!-- Big image -->
+    <img src="images/activities/thota.png"
+         alt="Coffee Estate Walk"
+         class="activity-img big-img">
+
+    <!-- Two small images -->
+    <div class="activity-row">
+      <img src="images/activities/iflow.png" alt="Coffee Estate View">
+      <img src="images/activities/coffee.png" alt="Coffee Plantation">
+    </div>
+  </div>
+  <!-- Nature Relaxation -->
+  <div class="activity-group">
+    <h3>Nature Relaxation 🌄</h3>
+
+    <div class="activity-row">
+      <img src="images/activities/na.jpeg" alt="Nature Relaxation">
+      <img src="images/activities/nature2.jpg" alt="Peaceful Nature">
+    </div>
+  </div>
+ <!-- Trekking & Campfire -->
+<div class="last-activities">
+  <h3>Trekking 🏞️</h3>
+  <div class="single-activity">
+    <img src="images/activities/tra.png" alt="Trekking">
+  </div>
+  <h3>Campfire Night 🔥</h3>
+  <div class="single-activity">
+    <img src="images/activities/benki.png" alt="Campfire Night">
+    
+  </div>
+</div>
+
+</section>
+
+
+<a href="https://forms.gle/D3f3KuaThHVzMiA97" target="_blank" class="floating-booking-btn">Book Now</a>
+
+<div id="footer"></div>
+
+
+<script>
+  // Load header & footer
+  fetch("partials/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+
+      // Initialize mobile menu
+      const menuToggle = document.querySelector(".nav-toggle");
+      const mobileNav = document.querySelector(".mobile-nav");
+
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener("click", () => {
+          mobileNav.classList.toggle("active");
+        });
+
+        // Close menu when clicking a link
+        mobileNav.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", () => {
+            mobileNav.classList.remove("active");
+          });
+        });
+      }
+    });
+
+  fetch("partials/footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>

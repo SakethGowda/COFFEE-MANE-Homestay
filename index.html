@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Coffee Mane | ಕಾಫಿ ಮನೆ</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.png">
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <img src="images/homestay/hero.jpg" alt="Coffee Mane Homestay">
+  <div class="hero-text">
+    <h1>Coffee Mane | ಕಾಫಿ ಮನೆ</h1>
+    <p>Welcome to your peaceful homestay surrounded by nature and hills.</p>
+    <div class="hero-buttons">
+      <a href="https://forms.gle/D3f3KuaThHVzMiA97" target="_blank" class="btn-primary">Book Now</a>
+      <a href="tel:+916362179597" class="btn-secondary">Call</a>
+      <a href="https://wa.me/918762504467?text=Hi" target="_blank" class="btn-secondary">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<script>
+  // Load header & footer
+  fetch("partials/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+
+      // Initialize mobile menu
+      const menuToggle = document.querySelector(".nav-toggle");
+      const mobileNav = document.querySelector(".mobile-nav");
+
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener("click", () => {
+          mobileNav.classList.toggle("active");
+        });
+
+        // Close menu when clicking a link
+        mobileNav.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", () => {
+            mobileNav.classList.remove("active");
+          });
+        });
+      }
+    });
+
+  fetch("partials/footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+</body>
+</html>

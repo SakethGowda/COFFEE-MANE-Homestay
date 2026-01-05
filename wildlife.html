@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wildlife | Coffee Mane | ಕಾಫಿ ಮನೆ</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.png">
+</head>
+<body>
+
+<!-- HEADER (SAME AS OTHER PAGES) -->
+<div id="header"></div>
+
+<!-- WILDLIFE SECTION -->
+<section class="wildlife">
+  <h1>Wildlife Around Coffee Mane</h1>
+  <p class="wildlife-sub">
+    Our homestay is located inside a coffee estate surrounded by forest 🌿  
+    Guests often spot wildlife moving freely in their natural habitat.
+  </p>
+
+  <div class="wildlife-grid">
+
+    <div class="wildlife-card">
+      <h3>🐗 Wild Boar (ಕಾಡುಹಂದಿ)</h3>
+      <img src="images/wildlife/handi.webp" alt="Wild Boar">
+    </div>
+
+    <div class="wildlife-card">
+      <h3>🦚 Peacock (ನವಿಲು)</h3>
+      <img src="images/wildlife/pik.png" alt="Peacock">
+    </div>
+
+    <div class="wildlife-card">
+      <h3>🐓 Wild Chicken (ಕಾಡುಕೋಳಿ)</h3>
+      <img src="images/wildlife/kkoli.png" alt="Wild Chicken">
+    </div>
+
+    <div class="wildlife-card">
+      <h3>🐿️ Squirrel (ಅಳಿಲು)</h3>
+      <img src="images/wildlife/ali.png" alt="Squirrel">
+    </div>
+
+    <div class="wildlife-card">
+      <h3>🐿️ Giant Squirrel (ಕೆಂಜಲಿಳು)</h3>
+      <img src="images/wildlife/alilu.png" alt="Giant Squirrel">
+    </div>
+
+    <div class="wildlife-card">
+      <h3>🐃 Gaur (ಕಾಡೆಮ್ಮೆ)</h3>
+      <img src="images/wildlife/emme.png" alt="Gaur">
+    </div>
+
+    <div class="wildlife-card">
+      <h3>🐒 Monkey (ಕೋತಿ)</h3>
+      <img src="images/wildlife/manga.png" alt="Monkey">
+    </div>
+
+    <div class="wildlife-card">
+      <h3>🐇 Rabbit (ಮೊಲ)</h3>
+      <img src="images/wildlife/mola.png" alt="Rabbit">
+    </div>
+
+    <div class="wildlife-card">
+      <h3>🦌 Sambar Deer / Kadave (ಕಡವೆ)</h3>
+      <img src="images/wildlife/kadu.png" alt="Sambar Deer">
+    </div>
+
+  </div>
+</section>
+
+<a href="https://forms.gle/D3f3KuaThHVzMiA97" target="_blank" class="floating-booking-btn">
+  Book Now
+</a>
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<script>
+  // Load header & footer
+  fetch("partials/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+
+      // Initialize mobile menu
+      const menuToggle = document.querySelector(".nav-toggle");
+      const mobileNav = document.querySelector(".mobile-nav");
+
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener("click", () => {
+          mobileNav.classList.toggle("active");
+        });
+
+        // Close menu when clicking a link
+        mobileNav.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", () => {
+            mobileNav.classList.remove("active");
+          });
+        });
+      }
+    });
+
+  fetch("partials/footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+
+<script src="js/main.js"></script>
+<div class="menu-overlay"></div>
+
+</body>
+</html>

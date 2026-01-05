@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nearby Places | Coffee Mane | ಕಾಫಿ ಮನೆ</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+<section class="places">
+  <h2>Nearby Places</h2>
+
+  <div class="place-card">
+    <img src="images/places/pandavar.jpg" alt="Pandavar Gudda View Point">
+    <h3>Pandavar Gudda View Point 🌄</h3>
+    <a href="https://maps.app.goo.gl/qBXDnAfEvjSctANy7" target="_blank">Know More</a>
+  </div>
+
+  <div class="place-card">
+    <img src="images/places/bettada.jpg" alt="Bettada Bhairaveshwara Temple">
+    <h3>Bettada Bhairaveshwara Temple 🕉️</h3>
+    <a href="https://share.google/sWtQJpRcPonx3dyU8" target="_blank">Know More</a>
+  </div>
+
+  <div class="place-card">
+    <img src="images/places/nanya.jpg" alt="Nanya Bhairaveshwara Temple">
+    <h3>Nanya Bhairaveshwara Temple 🕉️</h3>
+    <a href="https://maps.app.goo.gl/i66qjFikvZcbLcvdA" target="_blank">Know More</a>
+  </div>
+
+  <div class="place-card">
+    <img src="images/places/ettina.jpg" alt="Ettina Bhuja View Point">
+    <h3>Ettina Bhuja View Point 🌿🌄</h3>
+    <a href="https://maps.app.goo.gl/b1ThuCw8aq8PjyWJA" target="_blank">Know More</a>
+  </div>
+
+  <div class="place-card">
+    <img src="images/places/abbe.jpg" alt="Abbe Gundi Falls">
+    <h3>Abbe Gundi Falls 🌊</h3>
+    <a href="https://maps.app.goo.gl/aGQCXUjWcZeSSRydA" target="_blank">Know More</a>
+  </div>
+
+  <div class="place-card">
+    <img src="images/places/devaramane.jpg" alt="Devaramane View Point">
+    <h3>Devaramane View Point 🌄</h3>
+    <a href="https://maps.app.goo.gl/SvHCQ56xPZYzvXCd8" target="_blank">Know More</a>
+  </div>
+
+  <div class="place-card">
+    <img src="images/places/devarunda.jpg" alt="Devarunda Prasanna Rameshwara Temple">
+    <h3>Devarunda Prasanna Rameshwara Temple 🕉️</h3>
+    <a href="https://maps.app.goo.gl/x3oo2HQiAc9RQbBm9" target="_blank">Know More</a>
+  </div>
+
+  <div class="place-card">
+    <img src="images/places/rani.png" alt="Rani Jhari Viewpoint">
+    <h3>Rani Jhari Viewpoint🌿⛰️</h3>
+    <a href="https://maps.app.goo.gl/KWGRP2Wkbcp9L62r8" target="_blank">Know More</a>
+  </div>
+</section>
+
+<a href="https://forms.gle/D3f3KuaThHVzMiA97" target="_blank" class="floating-booking-btn">Book Now</a>
+
+<div id="footer"></div>
+
+<script>
+  // Load header & footer
+  fetch("partials/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+
+      // Initialize mobile menu
+      const menuToggle = document.querySelector(".nav-toggle");
+      const mobileNav = document.querySelector(".mobile-nav");
+
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener("click", () => {
+          mobileNav.classList.toggle("active");
+        });
+
+        // Close menu when clicking a link
+        mobileNav.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", () => {
+            mobileNav.classList.remove("active");
+          });
+        });
+      }
+    });
+
+  fetch("partials/footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
